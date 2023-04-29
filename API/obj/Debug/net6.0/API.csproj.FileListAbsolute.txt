@@ -39,3 +39,5 @@ C:\Users\Ivan\OneDrive\Рабочий стол\Folders\Tasks\ProductivitySite\AP
 C:\Users\Ivan\OneDrive\Рабочий стол\Folders\Tasks\ProductivitySite\API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Ivan\OneDrive\Рабочий стол\Folders\Tasks\ProductivitySite\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\Ivan\OneDrive\Рабочий стол\Folders\Tasks\ProductivitySite\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Ivan\OneDrive\Рабочий стол\Folders\Tasks\ProductivitySite\API\bin\Debug\net6.0\DocumentFormat.OpenXml.dll
+C:\Users\Ivan\OneDrive\Рабочий стол\Folders\Tasks\ProductivitySite\API\bin\Debug\net6.0\System.IO.Packaging.dll
