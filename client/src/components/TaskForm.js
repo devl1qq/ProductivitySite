@@ -54,48 +54,25 @@ const TaskForm = () => {
         const completedTasks = response.data;
   
         if (completedTasks.length > 0) {
-          const doc = new Document();
+          const taskDescriptions = completedTasks.map((task) => task.description).join("\n");
   
-          // Add header for completed tasks
-          doc.addSection({
-            children: [
-              new Paragraph({
-                text: 'Completed Tasks',
-                heading: HeadingLevel.HEADING_1,
-              }),
-              new Paragraph(),
-            ],
-          });
+          const fileData = new Blob([taskDescriptions], { type: "text/plain" });
+          const fileUrl = URL.createObjectURL(fileData);
   
-          // Add completed tasks to a table
-          const table = doc.addTable({
-            rows: [
-              new TableRow({
-                children: [
-                  new TableCell({ children: [new Paragraph('Description')] }),
-                  new TableCell({ children: [new Paragraph('Completed')] }),
-                ],
-              }),
-              ...completedTasks.map((task) => {
-                return new TableRow({
-                  children: [
-                    new TableCell({ children: [new Paragraph(task.description)] }),
-                    new TableCell({ children: [new Paragraph('Yes')] }),
-                  ],
-                });
-              }),
-            ],
-          });
-  
-          // Save the document as a .docx file
-          const buffer = await Packer.toBuffer(doc);
-          saveAs(new Blob([buffer]), 'completed_tasks.docx');
+          const link = document.createElement("a");
+          link.href = fileUrl;
+          link.download = "completed_tasks.txt";
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          window.location.reload();
         }
       }
     } catch (error) {
       console.log(error);
     }
   };
+  
   
   
   
